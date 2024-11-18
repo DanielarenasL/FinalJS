@@ -1,4 +1,4 @@
-import '../estilos/informacion.css'
+import '../styles/informacion.css'
 
 function Informacion() {
     return (

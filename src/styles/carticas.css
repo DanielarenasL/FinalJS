@@ -1,0 +1,21 @@
+
+.contenedor {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  
+    gap: 3px; 
+    padding: 0; 
+}
+
+.contenedor li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartica img {
+    width: 40%; 
+    height: auto;  
+    border-radius: 8px;  
+    box-shadow: 0 4px 8px rgba(242, 83, 83, 0.924); 
+    object-fit: cover; 
+}

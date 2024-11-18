@@ -1,11 +1,11 @@
-import '../estilos/tablero.css'
+import '../styles/tablero.css'
 import React from 'react';
-
+import Cartas from './cartas';
 
 function Tablero() {
     return (
     <div className="Tablerito">
-      <p>Tablero culero</p>
+      <Cartas/>
     </div>
     );
   
