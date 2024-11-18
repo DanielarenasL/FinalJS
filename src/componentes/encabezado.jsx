@@ -1,4 +1,4 @@
-import './encabezado.css'
+import '../estilos/encabezado.css'
 
 function Header() {
     return (

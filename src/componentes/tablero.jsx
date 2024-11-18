@@ -1,4 +1,4 @@
-import './tablero.css'
+import '../estilos/tablero.css'
 import React from 'react';
 
 
