@@ -1,11 +1,10 @@
-//import './Login';
+import './encabezado.css'
 
 function Header() {
     return (
-        <header>
-            <div className="titulo">Memorie Game </div>
+        <header className='Header'>
+            <h1>Memorie Game </h1>
         </header>
-
     );
   
 }

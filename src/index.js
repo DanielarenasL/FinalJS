@@ -2,12 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import Header from './encabezado';
+import Informacion from './informacion';
+import Tablero from './tablero';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Header />
+    <div className='header'>
+      <Header />
+    </div>
+    <div className='main'>
+      <Informacion />
+      <Tablero />
+    </div>
   </React.StrictMode>
 );
 
