@@ -1,17 +1,7 @@
-.App {
-  text-align: center;
+.Login {
+  text-align: start;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .App-header {
   background-color: #282c34;
@@ -19,9 +9,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+.logincontainer {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background-color: rgb(41, 77, 236);
+  padding: 30px;
+  border-radius: 10%;
+}
+.logincard{
+  display: flex;
+  align-items: center;
+  text-align: center;
 }
 
 .App-link {
