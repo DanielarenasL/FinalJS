@@ -1,19 +1,21 @@
-.app {
-  display: flex;
-  flex-direction: column; 
-  height: 100vh; 
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 .header {
-  background-color: #08ff10;
+  background-color: #4dfb53;
   color: white;
   text-align: center;
-  padding: 1rem;
+  padding: 0.2rem;
 }
 
 .main {
   display: flex;
   flex: 1; 
+  height: 100%;
 }
 body {
   margin: 0;
