@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Header from './encabezado';
-import Informacion from './informacion';
-import Tablero from './tablero';
+import Header from './componentes/encabezado';
+import Informacion from './componentes/informacion';
+import Tablero from './componentes/tablero';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
