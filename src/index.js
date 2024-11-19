@@ -5,7 +5,7 @@ import Header from './components/encabezado';
 import Informacion from './components/informacion';
 import Tablero from './components/tablero';
 import reportWebVitals from './reportWebVitals';
-import Cartas from './components/cartas'
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -15,7 +15,7 @@ root.render(
     <div className='main'>
       <Informacion />
       <Tablero />
-      <Cartas />
+      
     </div>
   </React.StrictMode>
 );
