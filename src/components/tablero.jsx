@@ -27,7 +27,7 @@ const Cartas = () =>{
                                     <img src="" alt="vale mondá esta vaina"/>
                                 </div>
                                 <div className="carticaback">
-                                    <img src={carta} alt="vale mondá esta vaina"/>
+                                    <img src={carta.split('|')[1]} alt="vale mondá esta vaina"/>
                                 </div>
                             </div>
 

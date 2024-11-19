@@ -8,5 +8,5 @@ export const obtenerim = (size) =>{
         './images/oikawa.jpeg'
     ]
     const duplicacion = imagenes.slice(0,size)
-    return duplicacion.flatMap(carta => [carta, carta]).sort(() => Math.random() - 0.4) 
+    return duplicacion.flatMap(carta => [`1|${carta}`, `2|${carta}`]).sort(() => Math.random() - 0.4) 
 }
