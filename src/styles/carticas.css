@@ -1,22 +1,60 @@
 
+.Tablerito {
+    flex: 2; 
+    background-color: #ffdb11;
+    padding: 1rem;
+    justify-content: center;
+    
+  }
 .contenedor {
-    background-color: transparent;
+    background-color: rgb(107, 182, 247);
     display: grid;
     grid-template-columns: repeat(3, 1fr);  
     gap: 3px; 
-    padding: 0; 
+    padding: 1rem; 
 }
 
 .contenedor li {
     display: flex;
     justify-content: center;
     align-items: center;
+    perspective: 1000px;
 }
 
-.cartica img {
-    width: 40%; 
-    height: auto;  
-    border-radius: 8px;  
-    box-shadow: 0 4px 8px rgba(242, 83, 83, 0.924); 
+
+
+.contenido {
+    width: 100px; 
+    height: 140px; 
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    cursor: pointer;
+}
+
+.contenido.volteada {
+    transform: rotateY(180deg); 
+}
+.cartica, .carticaback {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; 
+    border-radius: 8px;
+}
+
+.cartica{
+    background: #1bc924; 
+}
+
+.carticaback {
+    transform: rotateY(180deg);
+}
+
+img {
+    width: 100%; 
+    height: 100%;  
     object-fit: cover; 
+    border-radius: 8px;  
+    box-shadow: 0 4px 8px rgba(255, 57, 57, 0.3); 
 }
