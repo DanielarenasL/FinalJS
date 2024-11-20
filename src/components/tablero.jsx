@@ -57,9 +57,15 @@ const Cartas = () => {
     }, [opened, imagenes.length]); //El efecto se ejecuta cada vez que cambia el estado de las cartas emparejadas,
     //Asegura que el efecto también reaccione a cambios en el número de cartas en el tablero
 
+    //esto basicamente es para contruir el la baraja uniforme, es edecir, es que antes 
+    //colocaba 5 pares, entonces apareecian disque 6 arriba y 4 abajo, entonces esto es para
+    //que se vaya ajutsatndo al numero de columnas dependiendo de las cartas que se eingresan
+    const numeroColumnas = Math.min(5, Math.ceil(imagenes.length / 2));
     return (
         <div className="tablerito">
-            <ul className="contenedor">
+            {/* y aqui basicamnete lo que queremos es ajustar directamente la propiedad del grid no se que aplicando el numero
+            de columnas necesarias para que esté bien proporcionado*/}
+            <ul className="contenedor" style={{ gridTemplateColumns: `repeat(${numeroColumnas}, 1fr)` }}>
                 
                 {imagenes.map((carta, index) => (
 //imagenes: pues imagenes, las cartas mejor dicho

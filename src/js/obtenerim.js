@@ -13,6 +13,7 @@ export const obtenerim = (size) =>{
         '/images/zero.jpeg'
 
     ]
+
     const duplicacion = imagenes.slice(0,size)
 // Es un método de arrays en JavaScript que devuelve una copia de una parte del array original
 // El array original no se modifica, entonces es como verlo de esta forma, yo ingreso 5 cartas

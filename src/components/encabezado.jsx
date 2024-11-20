@@ -3,7 +3,7 @@ import '../styles/encabezado.css'
 function Header() {
     return (
         <header className='Header'>
-            <h1>GOJO TE AMO</h1>
+            <h1>MEMORIE GAME</h1>
         </header>
     );
   
