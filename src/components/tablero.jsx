@@ -1,11 +1,15 @@
 import { useState, useEffect } from 'react';
 import '../styles/carticas.css';
 import { obtenerim } from '../js/obtenerim';
+import Informacion from './informacion';
 
 let tamano = parseInt(prompt("Ingrese la cantidad que desea: "),10);
 //y esto se tiene que parsear a entero e, base 10 porque si solo se deja el prompt, solo está recibiendo un string y 
 //haría una concatenación más no va a sumar 
-
+let intentos = 0;
+let errores = 0;
+let aciertos = 0;
+let ronda = 1;
 const Cartas = () => {
     const [imagenes, setImages] = useState(obtenerim(tamano)); // Genera las cartas
     const [selected, setSelected] = useState([]); // Cartas temporalmente seleccionadas
@@ -21,6 +25,8 @@ const Cartas = () => {
 //toma el estado anterior(prev y la añade a la carta actual (carta)), por ejemplo
 //Si selected es inicialmente [], al seleccionar la carta gojo, el nuevo valor será ['gojo'].
 //Si luego seleccionas otra carta eren, el nuevo valor será ['gojo', 'eren'].
+
+            
         }
     };
 
@@ -31,8 +37,16 @@ const Cartas = () => {
         if (selected.length === 2) {
             const [firstCard, secondCard] = selected; //Asigna las dos cartas seleccionadas a las variables firstCard y secondCard
             //Divide las cartas en partes usando el carácter | como separador, es decir, '1|A'.split('|')[1] → 'A' lo que representa la imagen que se le está proporcionando
+            intentos += 1;
+            //Informacion(intentos, errores, aciertos, ronda)
+            console.log(intentos)
             if (firstCard.split('|')[1] === secondCard.split('|')[1]) { //Si los valores coinciden, las cartas son emparejadas
                 // se a ctualiza el estado opened para incluir ambas cartas
+                aciertos += 1;
+                errores = intentos;
+                errores -= 1;
+                console.log('Errores: ',errores)
+                console.log('Aciertos: ', aciertos)
                 setOpened((prev) => [...prev, firstCard, secondCard]);
                 //toma el estado anterior(prev y la añade las parejas), por ejemplo
 //Si opened es inicialmente [], al seleccionar la carta gojo, el nuevo valor será ['gojo', 'gojo'].
@@ -48,6 +62,9 @@ const Cartas = () => {
         //Comprueba si todas las cartas han sido emparejadas y Evita que el efecto se ejecute si no hay cartas cargadas
         if (opened.length === imagenes.length && imagenes.length > 0) {
             setTimeout(() => {
+                aciertos = 0;
+                ronda += 1;
+                console.log("Ronda: ", ronda)
                 tamano += 2; // Incrementa el tamaño, es decir, ingreso primero 3, completo todo, y auemnta 2 ahora me cargan 5 pares y así
                 setImages(obtenerim(tamano)); // Carga las nuevas cartas para el siguiente nivel
                 setSelected([]); // Limpia las cartas seleccionadas
