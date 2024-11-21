@@ -1,4 +1,11 @@
 
+.game {
+    display: flex;
+    justify-content: center;
+    
+    width: 100%;
+}
+
 .tablerito {
     flex: 2; 
     background-color: #000000;
@@ -7,7 +14,7 @@
     padding: 1rem;
     justify-content: center;
     box-sizing: border-box;
-    
+
   }
 .contenedor {
     background-color: rgb(0, 0, 0);
@@ -21,6 +28,8 @@
     cursor: pointer;
     transition: 0.4s ease-in-out;
     border-radius: 9px;
+    height: auto;
+
 }
 .contenedor:hover{
     box-shadow: 0 0 50px rgb(93, 198, 255)
@@ -33,6 +42,7 @@
     align-items: center;
     perspective: 1000px;
     box-sizing: border-box;
+    height: auto;
 }
 
 
@@ -40,7 +50,6 @@
 .contenido {
     width: 100px; 
     height: 140px; 
-    position: relative;
     transform-style: preserve-3d;
     transition: transform 0.6s;
     cursor: pointer;

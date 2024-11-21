@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import Header from './components/encabezado';
-import Informacion from './components/informacion';
 import Tablero from './components/tablero';
 import reportWebVitals from './reportWebVitals';
 
@@ -13,7 +12,6 @@ root.render(
       <Header />
     </div>
     <div className='main'>
-      <Informacion />
       <Tablero />
       
     </div>

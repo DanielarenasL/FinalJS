@@ -6,11 +6,12 @@ export const obtenerim = (size) =>{
         './images/mereoleona.jpg',
         './images/naruchan.png',
         './images/oikawa.jpeg',
-        '/images/jeanne.png',
+        'https://i.pinimg.com/736x/e8/9c/f7/e89cf7f7d53ab7dc5bb595025739b6cb.jpg',
         '/images/eren.jpg',
         '/images/orsted.jpg',
         '/images/papasote.jpeg',
-        '/images/zero.jpeg'
+        '/images/zero.jpeg',
+
 
     ]
 
