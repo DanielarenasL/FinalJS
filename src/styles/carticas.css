@@ -24,15 +24,16 @@
     padding: 1rem; 
     max-width: 100%;
     box-sizing: border-box;
-    box-shadow: 0 0 25px blue;
+    box-shadow: 0 0 25px red;
+   
     cursor: pointer;
-    transition: 0.4s ease-in-out;
     border-radius: 9px;
     height: auto;
 
 }
+
 .contenedor:hover{
-    box-shadow: 0 0 50px rgb(93, 198, 255)
+    box-shadow: 0 0 50px blue;
                
 }
 
@@ -68,7 +69,7 @@
 }
 
 .cartica{
-    background: #1bc924; 
+    background: #000000; 
 }
 
 .carticaback {

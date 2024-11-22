@@ -1,8 +1,60 @@
 .informacion{
     flex: 1;
-    background-color: #39a1fb;
+    background-color: #000000;
     padding: 1rem;
     display: flex;
     justify-content: center;
     font-size: 30px;
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.629);
+   
   }
+  .informacion:hover{
+    box-shadow: 0 0 8px rgb(93, 198, 255)
+               
+}
+
+.puntuacion {
+  background-color: rgb(0, 0, 0);
+  list-style-type: none;
+  justify-content: center;
+  display: flex;
+  flex-direction: column; 
+  padding: 1rem; 
+  gap: 1rem; 
+}
+
+.puntuacion ul {
+  list-style-type: none; 
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column; 
+  gap: 0.9rem; 
+}
+
+.puntuacion ul li {
+  background-color: rgba(242, 10, 10, 0.798); 
+  color: black; 
+  padding: 0.5rem 1rem; 
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  transition: background-color 0.3s, box-shadow 0.3s, border 0.3s;
+}
+.puntuacion ul li:hover{
+  background-color: rgba(9, 156, 254, 0.917);
+  box-shadow: 0 4px 8px rgb(19, 140, 216);
+  border: 3px solid #062fff;
+}
+
+.puntuacion button{
+  background-color: #f43518d2;
+  box-shadow: 0 4px 8px red;
+  border-color: rgb(160, 8, 8);
+}
+
+.puntuacion button:hover{
+  background-color: #18c8f4d2;
+  box-shadow: 0 4px 8px rgb(0, 123, 255);
+  border-color: rgb(30, 0, 255);
+}

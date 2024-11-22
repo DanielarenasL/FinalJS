@@ -27,7 +27,7 @@ const Cartas = () => {
     // Actualizar puntuaciones al guardar una nueva
     const manejarGuardarPuntuacion = () => {
         const nombre = prompt("Escribe tu nombre para guardar la puntuación:") || "Anónimo";
-        guardarPuntuacion(nombre, maxpuntuacion + 10);
+        guardarPuntuacion(nombre, maxpuntuacion);
         const nuevasPuntuaciones = JSON.parse(localStorage.getItem('puntuaciones')) || [];
         setPuntuaciones(nuevasPuntuaciones);
     };
@@ -58,22 +58,33 @@ const Cartas = () => {
             if (firstCard.split('|')[1] === secondCard.split('|')[1]) { //Si los valores coinciden, las cartas son emparejadas
                 // se a ctualiza el estado opened para incluir ambas cartas
                 setAciertos((prev) => prev + 1);
-                setPuntos((prev) => prev + 10)
-                setMaxpuntuacion((puntos))
-                //al acertar aumenta el numer de aciertos y los puntos
+                setPuntos((prev) => {
+                    const nuevosPuntos = prev + 10; // Incrementa los puntos
+                    if (nuevosPuntos > (maxpuntuacion || 0)) {
+                        setMaxpuntuacion(nuevosPuntos); // Actualiza maxpuntuacion si es necesario
+                    }
+                    return nuevosPuntos;
+                });
                 
                 setOpened((prev) => [...prev, firstCard, secondCard]);
                 //toma el estado anterior(prev y la añade las parejas), por ejemplo
 //Si opened es inicialmente [], al seleccionar la carta gojo, el nuevo valor será ['gojo', 'gojo'].
             }else {
-                setErrores((prev) => prev + 1)
-                if(ronda > 1) {
-                    setPuntos((prev) => prev - 5)
-                }
-                if (puntos <= 0 && ronda > 1) {
-                    alert("tan rapido?")
+                setErrores((prev) => prev + 1);
+                const penalizacion = ronda * 3;
+                console.log("penalizacion:", penalizacion) // Penalización proporcional a la ronda
+                setPuntos((prev) => {
+                    const nuevosPuntos = prev - penalizacion;
+                    if (nuevosPuntos > (maxpuntuacion || 0)) {
+                        setMaxpuntuacion(nuevosPuntos); // Actualiza maxpuntuacion si es necesario
+                    }
+                    return nuevosPuntos;
+                });
+
+                if (puntos - penalizacion <= 0) {
+                    alert("Tan rápido?");
                     manejarGuardarPuntuacion();
-                    window.location.reload();
+                    window.location.reload(); //reinicia la partida
                 }
             }
             //si la ronda es mayor a uno y el jugador falla, se le restaran puntos, si llega a perder estando en 0
@@ -122,7 +133,7 @@ const Cartas = () => {
             <div className="tablerito">
                 {/* y aqui basicamnete lo que queremos es ajustar directamente la propiedad del grid no se que aplicando el numero
                 de columnas necesarias para que esté bien proporcionado*/}
-                <ul className="contenedor" style={{ gridTemplateColumns: `repeat(${numeroColumnas}, 1fr)` }}>
+                <ul className="contenedor glow" style={{ gridTemplateColumns: `repeat(${numeroColumnas}, 1fr)` }}>
                     
                     {imagenes.map((carta, index) => (
     //imagenes: pues imagenes, las cartas mejor dicho

@@ -19,14 +19,14 @@ function Informacion({puntos, intentos, errores, aciertos, ronda}) {
             
             <div className="puntuacion">
                 <ul>
-                    <li>Puntuacion: {puntos}</li>
+                    <li>Puntuación: {puntos}</li>
                     <li>Intentos: {intentos}</li>
                     <li>Errores: {errores}</li>
                     <li>Aciertos: {aciertos}</li>
                     <li>Ronda: {ronda}</li>
                 </ul>
                 {/* Renderiza las estadisticas de la partida y crea el boton para obtener la puntuacion */}
-                <button onClick={mostrarPuntuaciones}>Obtener puntuacion</button>
+                <button className="btn" onClick={mostrarPuntuaciones}> <h2>Ver puntuacion</h2></button>
             </div>
         </div>
     );
