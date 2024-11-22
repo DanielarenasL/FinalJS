@@ -103,7 +103,7 @@ const Cartas = () => {
     //esto basicamente es para contruir el la baraja uniforme, es edecir, es que antes 
     //colocaba 5 pares, entonces apareecian disque 6 arriba y 4 abajo, entonces esto es para
     //que se vaya ajutsatndo al numero de columnas dependiendo de las cartas que se eingresan
-    const numeroColumnas = Math.min(5, Math.ceil(imagenes.length / 2));
+    const numeroColumnas = Math.min(7, Math.ceil(imagenes.length / 2));
     return (
         <div className="game">
             <div className="informacion">
