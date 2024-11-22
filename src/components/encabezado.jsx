@@ -3,7 +3,7 @@ import '../styles/encabezado.css'
 function Header() {
     return (
         <header className='Header'>
-            <h1>FELIPE NEGRO</h1>
+            <h1>Memorie Cards </h1>
         </header>
     );
   

@@ -54,7 +54,6 @@ const Cartas = () => {
             //Divide las cartas en partes usando el carácter | como separador, es decir, '1|A'.split('|')[1] → 'A' lo que representa la imagen que se le está proporcionando
             setIntentos((prev) => prev + 1);
             //Informacion(intentos, errores, aciertos, ronda)
-            console.log(intentos)
             if (firstCard.split('|')[1] === secondCard.split('|')[1]) { //Si los valores coinciden, las cartas son emparejadas
                 // se a ctualiza el estado opened para incluir ambas cartas
                 setAciertos((prev) => prev + 1);
@@ -71,21 +70,26 @@ const Cartas = () => {
 //Si opened es inicialmente [], al seleccionar la carta gojo, el nuevo valor será ['gojo', 'gojo'].
             }else {
                 setErrores((prev) => prev + 1);
-                const penalizacion = ronda * 3;
+                const penalizacion = ronda * 2;
                 console.log("penalizacion:", penalizacion) // Penalización proporcional a la ronda
-                setPuntos((prev) => {
-                    const nuevosPuntos = prev - penalizacion;
-                    if (nuevosPuntos > (maxpuntuacion || 0)) {
-                        setMaxpuntuacion(nuevosPuntos); // Actualiza maxpuntuacion si es necesario
+                
+                if(ronda > 1){
+                    setPuntos((prev) => {
+                        const nuevosPuntos = prev - penalizacion;
+                        if (nuevosPuntos > (maxpuntuacion || 0)) {
+                            setMaxpuntuacion(nuevosPuntos); // Actualiza maxpuntuacion si es necesario
+                        }
+                        return nuevosPuntos;
+                    });
+                    
+                    if (puntos - penalizacion <= 0) {
+                        alert("Tan rápido?");
+                        manejarGuardarPuntuacion();
+                        window.location.reload(); //reinicia la partida
                     }
-                    return nuevosPuntos;
-                });
-
-                if (puntos - penalizacion <= 0) {
-                    alert("Tan rápido?");
-                    manejarGuardarPuntuacion();
-                    window.location.reload(); //reinicia la partida
                 }
+
+                
             }
             //si la ronda es mayor a uno y el jugador falla, se le restaran puntos, si llega a perder estando en 0
             //pierde el juego y se reinicia la partida
