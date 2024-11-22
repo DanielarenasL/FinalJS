@@ -1,6 +1,7 @@
 export const obtenerim = (size) =>{
     const imagenes = [
         './images/gojo.png',
+        './images/kuro.jpg',
         './images/levi.jpg',
         './images/rudeus.jpg',
         './images/mereoleona.jpg',

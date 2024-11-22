@@ -1,5 +1,9 @@
 .Header{
-    text-align: center;
-    background-color: rgba(0, 0, 255, 0.748);
+    text-align: justify;
+    background-color: rgb(0, 0, 0);
 
+}
+.Header h1 {
+    font-style: italic;
+    color: rgb(251, 255, 35);
 }
