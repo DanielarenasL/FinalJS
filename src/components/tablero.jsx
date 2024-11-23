@@ -70,7 +70,7 @@ const Cartas = () => {
 //Si opened es inicialmente [], al seleccionar la carta gojo, el nuevo valor será ['gojo', 'gojo'].
             }else {
                 setErrores((prev) => prev + 1);
-                const penalizacion = ronda * 2;
+                const penalizacion = ronda * 3;
                 console.log("penalizacion:", penalizacion) // Penalización proporcional a la ronda
                 
                 if(ronda > 1){
